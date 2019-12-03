@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+  text-align: center;
+}
+
+/* Column container */
+.row {
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/*bottom row container */
+.bottomrow {
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.row,
+.bottomrow,
+.verticalcolumn {
+  display: flex;
+  padding: 20px;
+}
+
+.bottomrow > img {
+  max-width: 20%;
+  max-height: 20%;
+}
+
+/* Create one column with elements spaced vertically */
+.verticalcolumn {
+  flex: 20%;
+  flex-direction: column;
+  flex-grow: 3;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  max-width: 415px;
+  max-height: 290px;
+  padding: 0 4px; /*
+  background-color: white;
+  border: 1px;*/
+  border-radius: 15px;
+  position: relative;
+}
+
+.panarottis {
+  background-image: url("https://img.mrdfood.com/150x75/restaurants/Panarottis_1620x720_Cover.jpg");
+}
+
+.johndory {
+  background-image: url("https://img.mrdfood.com/150x75/templates/8a4fb992-71e0-4459-a271-1a2fbf8e4315.jpg");
+}
+
+.johndory,
+.panarottis {
+  width: 100%;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title,
+.verticalcolumn > p {
+  font-weight: bold;
+  color: black;
+}
+
+.onspecial {
+  background-color: rgb(237, 65, 71);
+  top: 16px;
+}
+
+.new {
+  background-color: #77bf44;
+  top: 40px;
+}
+
+#freedelivery {
+  background-color: rgb(237, 65, 71);
+  top: 140px;
+  position: absolute;
+  width: 100%;
+}
+
+.onspecial,
+.new {
+  position: absolute;
+  left: 16px;
+}
+
+#freedelivery,
+.onspecial,
+.new,
+.collect-badge,
+.delivery-badge {
+  color: white;
+  text-align: center;
+}
+
+.collect-badge,
+.delivery-badge {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.collect-badge {
+  background-color: gold;
+}
+
+.delivery-badge {
+  background-color: skyblue;
+}
+
+.measurements {
+  color: lime;
+}
+
+/* Responsive layout - when the screen is less than 768px wide, make cards underneath each other */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 375px) {
+  .column {
+    flex: 50%;
+    max-width: 100%;
+    border-style: none;
+  }
+}
